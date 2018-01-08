@@ -51,8 +51,7 @@ public class GameGrid{
 		}
 
 		// if the new direction is vertical with the present direction, it is grow
-		else if( ( Math.abs (direction.getR())== 1 && direction.getC() == 0)
-				&&( x == 0 && Math.abs(y) == 1) )
+		else if( ( Math.abs (direction.getR())== 1 && direction.getC() == 0) && ( x == 0 && Math.abs(y) == 1) )
 		{   
 			canvas.clearCell();
 			snake.grow(x,y);
@@ -64,8 +63,7 @@ public class GameGrid{
 		}
 
 		// if the new direction is vertical with the present direction, it is grow
-		else if (( Math.abs (direction.getC())== 1 && direction.getR() == 0)
-				&&( y == 0 && Math.abs(x) == 1) )
+		else if (( Math.abs (direction.getC())== 1 && direction.getR() == 0) && ( y == 0 && Math.abs(x) == 1) )
 		{       
 			canvas.clearCell();
 			snake.grow(x,y);
@@ -143,11 +141,9 @@ public class GameGrid{
 		boolean hitObs = false;
 		for(int i =0 ; i < obsArray.size(); i++ )
 		{
-			if (head.equals( obsArray.get(i)))
-				hitObs = true;
+			if (head.equals( obsArray.get(i)))  hitObs = true;
 		}
-		if (hitObs)
-			return true;   
+		if (hitObs) return true;   
 
 		return false; 
 	}
