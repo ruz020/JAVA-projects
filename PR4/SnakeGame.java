@@ -99,27 +99,27 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 
 
 		addMouseListener(new MouseAdapter() {
-				public void mouseClicked(MouseEvent e) 
-				{
-				new Thread(mover).start();
-				System.out.println("mouse click");
-				}
+			public void mouseClicked(MouseEvent e) 
+			{
+			new Thread(mover).start();
+			System.out.println("mouse click");
+			}
 
-				@Override
-				public void mouseEntered(MouseEvent e) {
-				}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
 
-				@Override
-				public void mouseExited(MouseEvent e) {
-				}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
 
-				@Override
-				public void mousePressed(MouseEvent e) {
-				}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
 
-				@Override
-				public void mouseReleased(MouseEvent e) {
-				}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
 
 		});
 	}
@@ -156,8 +156,8 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 		System.out.println("width - Integer width of the playing grid in pixels");
 		System.out.println("height - Integer height of the playing grid in pixels");
 		System.out.println("segmentsize - Integer size of each snake segment in pixels");
-        System.out.println("");
-    	System.out.println("defaults: width = 400, height = 400, segmentsize = 10");
+		System.out.println("");
+		System.out.println("defaults: width = 400, height = 400, segmentsize = 10");
 		System.exit(1);
 	}
 
@@ -172,8 +172,8 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 			this.setPreferredSize(new Dimension( FRAMEWIDTH, c+150));
 		else
 			this.setPreferredSize(new Dimension( r+10, c+150));
-		scoreInt = 0;         
-		
+			
+		scoreInt = 0;         		
 		mover = new SnakeMover( snake, direction, this);
 		addLayout(r, c, pixel, snake, gGrid); 
 		gGrid.addKeyListener(mover);
@@ -199,8 +199,7 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 		moveSnake();
 		int oldscore = scoreInt;
 		scoreInt += 10;  
-		if (scoreInt >= highScoreInt)
-			highScoreInt = scoreInt;
+		if (scoreInt >= highScoreInt) highScoreInt = scoreInt;
 		scoreLabel.setText("".format("%8d",scoreInt));
 		highScore.setText("".format("%8d",highScoreInt));
 		adjustSpeed();
@@ -220,7 +219,8 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 	public void actionPerformed( ActionEvent event)
 	{
 		if(event.getSource() == newGame)
-		{   south.removeAll();
+		{       
+			south.removeAll();
 			north.removeAll();
 			this.remove(grid);
 			mover.stopMover();
@@ -234,7 +234,6 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 			scoreLabel.setText("".format("%8d", scoreInt=0));
 			highScoreInt = 0;
 			scoreInt = 0;
-			//if(mover != null)
 			mover.stopMover();
 			active = false;
 			gameoverLabel.setText("GAME OVER!");
@@ -271,10 +270,14 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 			}
 		}
 		else if (a.length > 0 && a.length != 3)
+		{
 			usageMessage();
+		}
 
 		if( (width <= 0 || height <= 0 || pixelSize <= 0) || pixelSize > width || pixelSize > height )
+		{
 			usageMessage();
+		}
 
 		new SnakeGame().gameStart(width, height, pixelSize);
 	}
