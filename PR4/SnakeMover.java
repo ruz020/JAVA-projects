@@ -81,56 +81,53 @@ public class SnakeMover  implements Runnable, KeyListener
 		char cmd = e.getKeyChar();
 		if (!moveOK) return; // don't move
 	
-	    if ( cmd == 'j')
+	        if ( cmd == 'j')
 		{  
 		    if(direction.getR() == 0)
 		    {
-				if (grid.moveSnake(direction.getC(),direction.getR())) 
-				{
-					grid.drawGrid(); 
-					moveOK = true;
-				}
-				else
-					moveOK = false;
+			if (grid.moveSnake(direction.getC(),direction.getR())) 
+			{
+				grid.drawGrid(); 
+				moveOK = true;
+			}
+			else
+				moveOK = false;
 	   	    }
 		    else if(direction.getC() == 0)
-	        {
+	            {
 				if(grid.moveSnake(direction.getC(), 0-direction.getR()))
 				{
 					grid.drawGrid(); 			
-	                moveOK = true;
+	                		moveOK = true;
 				}
-				else 
-					moveOK = false;
-			}
+				else  moveOK = false;
+		    }
 		}
 		else if ( cmd == 'l')
 		{  
 	 	    if(direction.getR() == 0)
 		    { 
-				if(grid.moveSnake(0-direction.getC(),direction.getR()))
-				{	
-					grid.drawGrid(); 
-					moveOK = true;
-				}
-				else
-					moveOK = false;
-		    }  
-	  	    else if(direction.getC() == 0){
-				if(grid.moveSnake(direction.getC(),direction.getR()))
-				{ 
-					grid.drawGrid();
-	    			moveOK =true;   
-				}
-				else
-					moveOK = false;
+			if(grid.moveSnake(0-direction.getC(),direction.getR()))
+			{	
+				grid.drawGrid(); 
+				moveOK = true;
 			}
+			else  moveOK = false;
+		    }  
+	  	    else if(direction.getC() == 0)
+		    {
+			if(grid.moveSnake(direction.getC(),direction.getR()))
+			{ 
+				grid.drawGrid();
+			        moveOK =true;   
+			}
+			else  moveOK = false;
+		    }
 		}
 	
 		direction = grid.getDirection();
 		timeCount = 0;
-		if(moveOK)
-			sGame.moveSuccess();
+		if(moveOK) sGame.moveSuccess();
 	}
 } 
 
