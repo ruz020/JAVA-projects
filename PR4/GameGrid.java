@@ -32,8 +32,10 @@ public class GameGrid{
 
 	public boolean moveSnake( int x, int y)
 	{       
-		if(this.gameOver())
-		{ System.out.println("GameOver"); return false;}
+		if(this.gameOver()){ 
+			System.out.println("GameOver"); 
+			return false;
+		}
 		boolean find = false;
 		ArrayList<Coord> tempCoordArray = new ArrayList<Coord>();
 		for(int i =0; i<getSegments().size();i++)
@@ -57,8 +59,6 @@ public class GameGrid{
 			snake.grow(x,y);
 			head = snake.getHead();
 			direction = new Coord (x, y);
-			//canvas.fillCell(snake.getSegments(), obsArray);
-			//return true;
 			find = true;
 		}
 
@@ -69,16 +69,14 @@ public class GameGrid{
 			snake.grow(x,y);
 			head = snake.getHead();
 			direction = new Coord (x, y);
-			//canvas.fillCell(snake.getSegments(), obsArray);
-			//return true;
 			find = true;
 		}
 		else 
 		{  
 			find = false;
 		}  
-		if(!find)
-			return false;
+		if(!find) return false;
+		
 		if( this.gameOver())
 		{ 
             		canvas.fillCell(tempCoordArray, obsArray);
@@ -97,8 +95,9 @@ public class GameGrid{
 
 		for(int i= 0 ; i < column ; i++)
 		{
-			for(int j = 0; j < row; j ++)
+			for(int j = 0; j < row; j ++){
 				gridArray[j][i]='.';
+			}
 		}
 
 		ArrayList<Coord> array = snake.getSegments();
