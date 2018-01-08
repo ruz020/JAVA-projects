@@ -83,9 +83,9 @@ public class GameGrid{
 			return false;
 		if( this.gameOver())
 		{ 
-            canvas.fillCell(tempCoordArray, obsArray);
+            		canvas.fillCell(tempCoordArray, obsArray);
 			return false;
-        }
+        	}
 		else 
 		{       
 			canvas.fillCell(snake.getSegments(), obsArray);
@@ -104,6 +104,7 @@ public class GameGrid{
 		}
 
 		ArrayList<Coord> array = snake.getSegments();
+		
 		for(Coord coord : array)
 		{   
 			Coord tempC = coord;
