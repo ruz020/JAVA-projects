@@ -83,8 +83,7 @@ public class Snake{
 	public boolean intersects (Coord w, boolean checkHead)
 	{
 		int i = 0;
-		if (! checkHead)
-			i = 1;
+		if (! checkHead) i = 1;
 		for( ; i < snakeArray.size(); i++ )
 		{
 			if (w.equals( snakeArray.get(i))) return true; 
