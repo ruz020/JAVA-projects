@@ -10,7 +10,6 @@ public class Coord extends Point{
 	private int row;
 	private int column;
 	private Point p;
-
 	 
 	public Coord(int r, int c) 
 	{   
