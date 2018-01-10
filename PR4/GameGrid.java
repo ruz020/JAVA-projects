@@ -46,7 +46,6 @@ public class GameGrid{
 		// if direction is same as before, it is move
 		if(direction.getR() == x && direction.getC() == y)
 		{  
-			canvas.clearCell();
 			snake.move(x,y);
 			head = snake.getHead();
 			find = true;
@@ -55,7 +54,6 @@ public class GameGrid{
 		// if the new direction is vertical with the present direction, it is grow
 		else if( ( Math.abs (direction.getR())== 1 && direction.getC() == 0) && ( x == 0 && Math.abs(y) == 1) )
 		{   
-			canvas.clearCell();
 			snake.grow(x,y);
 			head = snake.getHead();
 			direction = new Coord (x, y);
@@ -65,7 +63,6 @@ public class GameGrid{
 		// if the new direction is vertical with the present direction, it is grow
 		else if (( Math.abs (direction.getC())== 1 && direction.getR() == 0) && ( y == 0 && Math.abs(x) == 1) )
 		{       
-			canvas.clearCell();
 			snake.grow(x,y);
 			head = snake.getHead();
 			direction = new Coord (x, y);
