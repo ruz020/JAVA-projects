@@ -39,7 +39,7 @@ public class SnakeMover  implements Runnable, KeyListener
 	}	
 
 
-	public synchronized void run()
+	public void run()
 	{        
 
 		while (moveOK)
@@ -76,53 +76,54 @@ public class SnakeMover  implements Runnable, KeyListener
 	}
 	public void keyTyped(KeyEvent e)
 	{       
-		System.out.println("Key press in");
 		Coord nd = direction;
 		char cmd = e.getKeyChar();
 		if (!moveOK) return; // don't move
 	
-	        if ( cmd == 'j')
+	    if ( cmd == 'j')
 		{  
 		    if(direction.getR() == 0)
 		    {
-			if (grid.moveSnake(direction.getC(),direction.getR())) 
-			{
-				grid.drawGrid(); 
-				moveOK = true;
-			}
-			else
-				moveOK = false;
+				if (grid.moveSnake(direction.getC(),direction.getR())) 
+				{
+					grid.drawGrid(); 
+					moveOK = true;
+				}
+				else
+					moveOK = false;
 	   	    }
 		    else if(direction.getC() == 0)
-	            {
+	        {
 				if(grid.moveSnake(direction.getC(), 0-direction.getR()))
 				{
 					grid.drawGrid(); 			
-	                		moveOK = true;
+	                moveOK = true;
 				}
-				else  moveOK = false;
-		    }
+				else 
+					moveOK = false;
+			}
 		}
 		else if ( cmd == 'l')
 		{  
 	 	    if(direction.getR() == 0)
 		    { 
-			if(grid.moveSnake(0-direction.getC(),direction.getR()))
-			{	
-				grid.drawGrid(); 
-				moveOK = true;
-			}
-			else  moveOK = false;
+				if(grid.moveSnake(0-direction.getC(),direction.getR()))
+				{	
+					grid.drawGrid(); 
+					moveOK = true;
+				}
+				else
+					moveOK = false;
 		    }  
-	  	    else if(direction.getC() == 0)
-		    {
-			if(grid.moveSnake(direction.getC(),direction.getR()))
-			{ 
-				grid.drawGrid();
-			        moveOK =true;   
+	  	    else if(direction.getC() == 0){
+				if(grid.moveSnake(direction.getC(),direction.getR()))
+				{ 
+					grid.drawGrid();
+	    			moveOK =true;   
+				}
+				else
+					moveOK = false;
 			}
-			else  moveOK = false;
-		    }
 		}
 	
 		direction = grid.getDirection();
