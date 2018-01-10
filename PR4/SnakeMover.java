@@ -97,7 +97,7 @@ public class SnakeMover  implements Runnable, KeyListener
 				if(grid.moveSnake(direction.getC(), 0-direction.getR()))
 				{
 					grid.drawGrid(); 			
-	                moveOK = true;
+	                		moveOK = true;
 				}
 				else 
 					moveOK = false;
@@ -119,7 +119,7 @@ public class SnakeMover  implements Runnable, KeyListener
 				if(grid.moveSnake(direction.getC(),direction.getR()))
 				{ 
 					grid.drawGrid();
-	    			moveOK =true;   
+	    				moveOK =true;   
 				}
 				else
 					moveOK = false;
