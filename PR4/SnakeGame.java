@@ -104,20 +104,16 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 			new Thread(mover).start();
 			System.out.println("mouse click");
 			}
-
-			@Override
+			
 			public void mouseEntered(MouseEvent e) {
 			}
-
-			@Override
+			
 			public void mouseExited(MouseEvent e) {
 			}
 
-			@Override
 			public void mousePressed(MouseEvent e) {
 			}
 
-			@Override
 			public void mouseReleased(MouseEvent e) {
 			}
 
