@@ -101,8 +101,8 @@ public class SnakeGame extends JFrame implements Runnable,ActionListener,ChangeL
 		addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) 
 			{
-			new Thread(mover).start();
-			System.out.println("mouse click");
+			        new Thread(mover).start();
+				System.out.println("mouse click");
 			}
 			
 			public void mouseEntered(MouseEvent e) {
