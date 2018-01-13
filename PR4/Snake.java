@@ -69,8 +69,7 @@ public class Snake{
 
 		direction = new Coord (x, y);
 		snakeArray.add(1, snakeArray.get(0));
-		snakeArray.set(0,  new Coord (snakeArray.get(0).getR() + x,
-		snakeArray.get(0).getC() + y) );
+		snakeArray.set(0,  new Coord (snakeArray.get(0).getR() + x, snakeArray.get(0).getC() + y));
 		head = snakeArray.get(0);
 		snakeLength++;
 
