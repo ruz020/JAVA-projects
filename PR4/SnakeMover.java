@@ -15,8 +15,8 @@ public class SnakeMover  implements Runnable, KeyListener
 {
 
 	private int timeCount = 0;
-	private static final int MINTICK = 1;
-	private static final int MAXTICK = 20;
+	private static final int MINTICK = 1; //fast
+	private static final int MAXTICK = 20;//slow
 	private int ticks = MAXTICK; 
 	private GameGrid grid;
 	private Coord direction;
@@ -80,50 +80,50 @@ public class SnakeMover  implements Runnable, KeyListener
 		char cmd = e.getKeyChar();
 		if (!moveOK) return; // don't move
 	
-	    if ( cmd == 'j')
+	        if ( cmd == 'j')
 		{  
 		    if(direction.getR() == 0)
 		    {
-				if (grid.moveSnake(direction.getC(),direction.getR())) 
-				{
-					grid.drawGrid(); 
-					moveOK = true;
-				}
-				else
-					moveOK = false;
+			if (grid.moveSnake(direction.getC(),direction.getR())) 
+			{
+				grid.drawGrid(); 
+				moveOK = true;
+			}
+			else
+				moveOK = false;
 	   	    }
 		    else if(direction.getC() == 0)
-	        {
-				if(grid.moveSnake(direction.getC(), 0-direction.getR()))
-				{
-					grid.drawGrid(); 			
-	                		moveOK = true;
-				}
-				else 
-					moveOK = false;
+	            {
+			if(grid.moveSnake(direction.getC(), 0-direction.getR()))
+			{
+				grid.drawGrid(); 			
+				moveOK = true;
 			}
+			else 
+				moveOK = false;
+	     	    }
 		}
 		else if ( cmd == 'l')
 		{  
 	 	    if(direction.getR() == 0)
 		    { 
-				if(grid.moveSnake(0-direction.getC(),direction.getR()))
-				{	
-					grid.drawGrid(); 
-					moveOK = true;
-				}
-				else
-					moveOK = false;
+			if(grid.moveSnake(0-direction.getC(),direction.getR()))
+			{	
+				grid.drawGrid(); 
+				moveOK = true;
+			}
+			else
+				moveOK = false;
 		    }  
 	  	    else if(direction.getC() == 0){
-				if(grid.moveSnake(direction.getC(),direction.getR()))
-				{ 
-					grid.drawGrid();
-	    				moveOK =true;   
-				}
-				else
-					moveOK = false;
+			if(grid.moveSnake(direction.getC(),direction.getR()))
+			{ 
+				grid.drawGrid();
+				moveOK =true;   
 			}
+			else
+				moveOK = false;
+		     }
 		}
 	
 		direction = grid.getDirection();
