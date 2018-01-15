@@ -15,7 +15,7 @@ public class Snake{
 	 * set the initial head coordinate
 	 * set the snakeArray with only one head
 	 */ 
-	public Snake ( Coord initial, int maxlength)
+	public Snake ( Coord initial )
 	{
 		head = new Coord (initial);
 		snakeArray.add(head);		
