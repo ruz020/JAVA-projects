@@ -11,7 +11,7 @@ import java.lang.Runnable;
 import java.util.concurrent.TimeUnit;
 import java.awt.event.*;
 
-public class SnakeMover  implements Runnable, KeyListener
+public class SnakeMover implements Runnable, KeyListener
 {
 
 	private int timeCount = 0;
@@ -39,7 +39,7 @@ public class SnakeMover  implements Runnable, KeyListener
 	}	
 
 
-	public void run()
+	public synchronized void run()
 	{        
 
 		while (moveOK)
