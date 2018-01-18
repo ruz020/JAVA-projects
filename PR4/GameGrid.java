@@ -87,7 +87,7 @@ public class GameGrid{
 
 	}
 
-	public void drawGrid() //for testing
+	public void drawGrid()
 	{           
 
 		for(int i= 0 ; i < column ; i++)
