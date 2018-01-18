@@ -34,7 +34,8 @@ public class GraphicsGrid extends JPanel
 
 	public GraphicsGrid(){};	
 
-	protected void paintComponent(Graphics g) {
+	@Override
+	protected synchronized void paintComponent(Graphics g) {
 		int frameWidth = this.getWidth();
 		int frameHeight = this.getHeight();
 		int widthInt = width/pixels*pixels;
@@ -81,14 +82,14 @@ public class GraphicsGrid extends JPanel
 
 	}
 
-	public void fillCell(ArrayList<Coord> sarray, ArrayList<Coord> obs)
+	public synchronized void fillCell(ArrayList<Coord> sarray, ArrayList<Coord> obs)
 	{
 		trackSnake = sarray;
 		trackObs = obs;
 		repaint();
 	}
 
-	public void clearCell() 
+	public synchronized void clearCell() 
 	{         
 		trackSnake = emptyArray;
 		repaint();
